@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to underground</title>
+</head>
+<body>
+	<h1>Welcome to underground</h1>
+	<p>はろー</p>
+	{{if .flash.success}}
+	<p>{{.flash.success}}</p>
+	{{end}}
+	<form action="/no-thank-you" method="post" accept-charset="utf-8">
+		<button type="submit">No thank you</button>
+	</form>
+</body>
+</html>
