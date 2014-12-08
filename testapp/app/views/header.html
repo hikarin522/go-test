@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--meta http-equiv="Content-Type" content="text/html; charset=utf-8"-->
+	<title>{{.title}}</title>
+		<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+		<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/public/css/bootstrap.min.css">
+	{{range .moreStyles}}
+		<link rel="stylesheet" type="text/css" href="/public/{{.}}">
+	{{end}}
+		<!-- javascript -->
+	<script type="text/javascript" charset="utf-8" src="/public/js/jquery-2.1.1.min.js"></script>
+		<!--script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script-->
+	<script type="text/javascript" src="public/js/bootstrap.min.js" charset="utf-8"></script>
+	{{range .moreScripts}}
+		<script type="text/javascript" charset="utf-8" src="/public/{{.}}"></script>
+	{{end}}
+</head>
+<body>

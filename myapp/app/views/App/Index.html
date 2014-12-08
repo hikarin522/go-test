@@ -1,12 +1,13 @@
-{{set . "title" "Hello"}}
+{{set . "title" "Home"}}
 {{template "header.html" .}}
 
 <header class="hero-unit" style="background-color:#A9F16C">
   <div class="container">
     <div class="row">
       <div class="hero-text">
-        <h1>{{.greeting}}</h1>
-        <p></p>
+        <h1>It works!</h1>
+        <p>{{.i.Hello1}}</p>
+        <p>{{.i.Hello2}}</p>
       </div>
     </div>
   </div>
@@ -16,12 +17,6 @@
   <div class="row">
     <div class="span6">
       {{template "flash.html" .}}
-      <form action="/App/Hello" method="get" accept-charset="utf-8">
-        {{with $field := field "myName" .}}
-        <input type="text" name="{{$field.Name}}" value="{{$field.Flash}}"><br>
-        {{end}}
-        <input type="submit" value="Say hello!">
-      </form>
     </div>
   </div>
 </div>

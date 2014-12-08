@@ -5,8 +5,6 @@
 module:testrunner
 
 GET     /                                       App.Index
-GET		/welcome-to-underground					App.WelcomeToUnderGround
-POST	/no-thank-you							App.NoThankYou
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
