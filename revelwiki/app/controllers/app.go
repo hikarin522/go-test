@@ -18,6 +18,8 @@ func loadPage(title string) string {
 	filename := "wikiData/" + title + ".txt"
 	body, err := ioutil.ReadFile(filename)
 	if err != nil {
+		fmt.Println("title:", title)
+		fmt.Println("Load Error:", err)
 		return ""
 	}
 
@@ -45,7 +47,8 @@ func (c App) Edit(title string) revel.Result {
 func (c App) Save(title, body string) revel.Result {
 	err := savePage(title, body)
 	if err != nil {
-		fmt.Println("Save Error : ", err)
+		fmt.Println("title:", title)
+		fmt.Println("Save Error:", err)
 		return c.RenderError(err)
 	}
 	return c.Redirect("/view/" + title)
