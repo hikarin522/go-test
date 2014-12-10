@@ -35,7 +35,7 @@ func savePage(title string, body string) error {
 func (c App) View(title string) revel.Result {
 	body := loadPage(title)
 	if body == "" {
-		return c.Redirect("/edit/" + title)
+		return c.Redirect(routes.App.Edit(title))
 	}
 	return c.Render(title, body)
 }
