@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/revel/revel"
 	"io/ioutil"
+	"revelApp/revelwiki/app/routes"
 )
 
 type App struct {
@@ -15,7 +16,7 @@ func (c App) Index() revel.Result {
 }
 
 func loadPage(title string) string {
-	filename := "wikiData/" + title + ".txt"
+	filename := title + ".txt"
 	body, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("title:", title)
@@ -27,7 +28,7 @@ func loadPage(title string) string {
 }
 
 func savePage(title string, body string) error {
-	filename := "wikiData/" + title + ".txt"
+	filename := title + ".txt"
 	return ioutil.WriteFile(filename, []byte(body), 0600)
 }
 
@@ -51,5 +52,7 @@ func (c App) Save(title, body string) revel.Result {
 		fmt.Println("Save Error:", err)
 		return c.RenderError(err)
 	}
-	return c.Redirect("/view/" + title)
+
+	return c.Redirect(routes.App.View(title))
+	//return c.Redirect("/view/" + title)
 }
