@@ -15,6 +15,9 @@ GET		/favicon.ico							Static.Serve("public","img/favicon.png")
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/*filepath                       Static.Serve("public")
+GET     /css/*filepath                          Static.Serve("public/css")
+GET     /js/*filepath                           Static.Serve("public/js")
+GET     /img/*filepath                          Static.Serve("public/img")
 
 # Catch all
 *       /:controller/:action                    :controller.:action
