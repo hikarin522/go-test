@@ -6,10 +6,6 @@
 # Folders
 _obj
 _test
-github.com
-code.google.com
-golang.org
-gopkg.in
 
 # Architecture specific extensions/prefixes
 *.[568vq]
